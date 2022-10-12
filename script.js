@@ -223,17 +223,12 @@ function Ejercicio6() {
     let n = prompt('ingrese la cantidad de personas a pesar:');
     n = parseInt(n);
 
-    if (n == NaN) return;
-
     for (let i = 0; i < n; i++) {
         let pesoAnterior, peso, dif;
         let suma = 0;
         pesoAnterior = prompt(`(persona ${i+1}) ingrese su peso anterior:`);
         pesoAnterior = pesoAnterior.replace(',', '.');
         pesoAnterior = parseFloat(pesoAnterior);
-
-        // si no es un numero, cancela la funcion
-        if (pesoAnterior == NaN) return;
 
         //calcular el promedio de peso actual
         for (let i = 0; i < 10; i++) {
@@ -256,3 +251,23 @@ function Ejercicio6() {
         }
     }
 }
+
+// ejercicio 7
+function Ejercicio7() {
+    let total = 0;
+    let n = prompt('Cuantos productos diferentes a tomado:')
+    n = parseInt(n);
+
+    for (let i = 0; i < n; i++) {
+        let prod = prompt(`Cuanto cuesta el producto ${i+1}:`);
+        let cant = prompt(`Cuantos del producto ${i+1} a tomado:`);
+
+        if (prod == NaN || cant == NaN) return;
+
+        total += (parseInt(prod)*parseInt(cant));
+    }
+    
+        alert('El total es: ' + total);
+    
+}
+Ejercicio7();
