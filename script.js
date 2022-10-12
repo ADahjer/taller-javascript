@@ -4,12 +4,16 @@
 
 // funciones auxiliares
 
-// generador de numeros enteros aleatorios desde 0 hasta n - 1
+/**
+ * generador de numeros enteros aleatorios desde 0 hasta n - 1
+ */ 
 function RandomInt(n) {
     return Math.floor(Math.random * n);
 }
 
-// generador de numeros aleatorios con rango entre n y m
+/**
+ * generador de numeros aleatorios con rango entre n y m
+ */
 function RandomIntRange(n, m) {
     return Math.floor(Math.random() * (n - m)) + m;
 }
@@ -175,12 +179,14 @@ function Ejercicio4(hombres = 5, mujeres = 5) {
 
     // para este ejercicio se utilizaran edades aleatoreas entre 16 y 22 años
     // se calculara el promedio de inmediato
+    console.log('edades de los hombres: ');
     for (let i = 0; i < hombres; i++) {
         edadHombres[i] = RandomIntRange(16, 22);
         console.log(edadHombres[i]);
         promHombres += edadHombres[i];
         promTotal += edadHombres[i];
     }
+    console.log('edades de las mujeres: ');
     for (let i = 0; i < mujeres; i++) {
         edadMujeres[i] = RandomIntRange(16, 22);
         console.log(edadMujeres[i]);
@@ -197,4 +203,16 @@ function Ejercicio4(hombres = 5, mujeres = 5) {
 
 }
 
-Ejercicio4();
+// ejercicio 5
+function Ejercicio5(n = 10) {
+    let numeros = new Array(n);
+
+    console.log('los numeros generados son:')
+    for (let i = 0; i < numeros.length; i++) {
+        numeros[i] = RandomIntRange(1, 50);
+        console.log(numeros[i]);
+    }
+
+    console.log(`El numero menor es ${Math.min(...numeros)}`);
+
+}
