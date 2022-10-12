@@ -163,3 +163,38 @@ function Ejercicio3(n = 5) {
         console.log(`el trabajador ${i+1} trabajo ${horasTrabajadas[i]} horas esta semana y se le pago un total de: $${salario[i]}`);
     }
 }
+
+// ejercicio 4
+function Ejercicio4(hombres = 5, mujeres = 5) {
+    let total = hombres + mujeres;
+    let edadHombres = new Array(hombres);
+    let edadMujeres = new Array(mujeres);
+    let promHombres = 0;
+    let promMujeres = 0;
+    let promTotal = 0;
+
+    // para este ejercicio se utilizaran edades aleatoreas entre 16 y 22 años
+    // se calculara el promedio de inmediato
+    for (let i = 0; i < hombres; i++) {
+        edadHombres[i] = RandomIntRange(16, 22);
+        console.log(edadHombres[i]);
+        promHombres += edadHombres[i];
+        promTotal += edadHombres[i];
+    }
+    for (let i = 0; i < mujeres; i++) {
+        edadMujeres[i] = RandomIntRange(16, 22);
+        console.log(edadMujeres[i]);
+        promMujeres += edadMujeres[i];
+        promTotal += edadMujeres[i];
+    }
+    promHombres = promHombres / hombres;
+    promMujeres = promMujeres / mujeres;
+    promTotal = promTotal / total;
+
+    console.log(`La edad promedio de hombres es de ${promHombres}`);
+    console.log(`La edad promedio de muejeres es de ${promMujeres}`);
+    console.log(`La edad promedio total es de ${promTotal}`);
+
+}
+
+Ejercicio4();
