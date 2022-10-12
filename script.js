@@ -2,6 +2,18 @@
  * Autor: Asmith Dahjer Rebolledo
  */
 
+// funciones auxiliares
+
+// generador de numeros enteros aleatorios desde 0 hasta n - 1
+function RandomInt(n) {
+    return Math.floor(Math.random * n);
+}
+
+// generador de numeros aleatorios con rango entre n y m
+function RandomIntRange(n, m) {
+    return Math.floor(Math.random() * (n - m)) + m;
+}
+
 // Ejercicio 1
 
 function Ejercicio1(n = 5) {
@@ -14,7 +26,7 @@ function Ejercicio1(n = 5) {
     let carros = new Array(n);
 
     for (let i = 0; i < carros.length; i++) {
-        carros[i] = Math.floor(Math.random() * 10)
+        carros[i] = RandomInt(10);
 
         console.log(`Ultimo digito de la placa del carro ${i+1} es: ${carros[i]}`);
     }
@@ -103,7 +115,7 @@ function Ejercicio2(seleccion = 0) {
     // generar aleatoriamente edades entre 0 y 5
     console.log('Edades de la muestra:\n')
     for (let i = 0; i < edades.length; i++) {
-        edades[i] = Math.floor(Math.random() * 6);
+        edades[i] = RandomInt(6);
         console.log(edades[i]);
     }
 
@@ -123,4 +135,31 @@ function Ejercicio2(seleccion = 0) {
     console.log(`el ${(cat1/edades.length)*100}% estan entre 0 y 1 años.`);
     console.log(`el ${(cat2/edades.length)*100}% tienen mas de 1 años pero menos de 3.`);
     console.log(`y el ${(cat3/edades.length)*100}% tienen 3 o mas años.`);
+}
+
+// ejercicio 3
+function Ejercicio3(n = 5) {
+    let salarioHora = 20;
+    let salarioExtra = 25;
+    let horasTrabajadas = new Array(n);
+    let salario = new Array(n);
+
+    // para este ejercicio generaran una cantidad de horas aleatorios desde 20 hasta 60
+    for (let i = 0; i < n; i++) {
+        horasTrabajadas[i] = RandomIntRange(20, 60);
+        console.log(horasTrabajadas[i]);
+    }
+
+    // calcular el salario dependiendo de las horas que se trabajan
+    for (let i = 0; i < n; i++) {
+        if (horasTrabajadas[i] <= 40) {
+            salario[i] = horasTrabajadas[i] * 20;
+        } else if (horasTrabajadas[i] > 40) {
+            // variable auxiliar para tener el total de horas extras
+            let extras = horasTrabajadas[i] - 40;
+            salario[i] = ((horasTrabajadas[i] - extras) * 20) + (extras * 25);
+        }
+
+        console.log(`el trabajador ${i+1} trabajo ${horasTrabajadas[i]} horas esta semana y se le pago un total de: $${salario[i]}`);
+    }
 }
