@@ -216,3 +216,43 @@ function Ejercicio5(n = 10) {
     console.log(`El numero menor es ${Math.min(...numeros)}`);
 
 }
+
+// ejercicio 6
+function Ejercicio6() {
+
+    let n = prompt('ingrese la cantidad de personas a pesar:');
+    n = parseInt(n);
+
+    if (n == NaN) return;
+
+    for (let i = 0; i < n; i++) {
+        let pesoAnterior, peso, dif;
+        let suma = 0;
+        pesoAnterior = prompt(`(persona ${i+1}) ingrese su peso anterior:`);
+        pesoAnterior = pesoAnterior.replace(',', '.');
+        pesoAnterior = parseFloat(pesoAnterior);
+
+        // si no es un numero, cancela la funcion
+        if (pesoAnterior == NaN) return;
+
+        //calcular el promedio de peso actual
+        for (let i = 0; i < 10; i++) {
+            // variable auxiliar para reemplazar las comas por puntos decimales
+            let aux;
+            aux = prompt(`Ingrese el peso dado por la vascula #${i+1}:`);
+            aux = aux.replace(',', '.');
+            suma += parseFloat(aux); 
+        }
+
+        peso = suma / 10;
+        dif = peso - pesoAnterior
+
+        if (dif < 0) {
+            alert(`BAJO ${Math.abs(dif).toFixed(2)}Kg`);
+        } else if (dif > 0) {
+            alert(`SUBIO ${dif.toFixed(2)}Kg`);
+        } else {
+            alert('Se mantuvo en el mismo peso');
+        }
+    }
+}
