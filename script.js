@@ -330,3 +330,38 @@ function Ejercicio11() {
     alert(`la productoria de los ${n} numeros generados fue: ${producto}`);
     alert(`el promedio de los ${n} numeros generados fue: ${promedio}`);
 }
+
+// ejercicio 12
+function Ejercicio12() {
+    let par = 0;
+    let impar = 0;
+    let suma = 0;
+    let producto = 1;
+    let promedio;
+    let numero = prompt('Digite un numero:');
+
+    // si es un decimal, no ejecuta el codigo.
+    numero = numero.replace(',', '.');
+    let isFloat = parseFloat(numero) - parseInt(numero) != 0;
+    if (isFloat) return;
+
+    let digitos = numero.split('');
+
+    digitos.forEach(digito => {
+        digito = parseInt(digito);
+        suma += digito;
+        producto *= digito;
+
+        if (digito % 2 === 0) par++;
+        else impar++;
+    });
+
+    promedio = suma / digitos.length;
+
+    alert(`La sumatoria es: ${suma}`);
+    alert(`La productoria es: ${producto}`);
+    alert(`El promedio es: ${promedio}`);
+    alert(`La cantidad de numeros pares: ${par}`);
+    alert(`La cantidad de numeros impares: ${impar}`);
+}
+
