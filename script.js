@@ -32,11 +32,7 @@ function IsPrimo(n) {
 /**
  * serie de fibonacci
  */
-function fib(n) {
-    if (n <= 1) return n;
-
-    return fib(n-1) + fib(n-2);
-}
+var fibonacci = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144];
 
 // Ejercicio 1
 
@@ -373,4 +369,3 @@ function Ejercicio12() {
     alert(`La cantidad de numeros pares: ${par}`);
     alert(`La cantidad de numeros impares: ${impar}`);
 }
-
