@@ -8,7 +8,7 @@
  * generador de numeros enteros aleatorios desde 0 hasta n - 1
  */ 
 function RandomInt(max) {
-    return Math.floor(Math.random * max);
+    return Math.floor(Math.random() * max);
 }
 
 /**
@@ -369,3 +369,35 @@ function Ejercicio12() {
     alert(`La cantidad de numeros pares: ${par}`);
     alert(`La cantidad de numeros impares: ${impar}`);
 }
+
+// ejercicio 13
+function Ejercicio13() {
+    let par = 0;
+    let impar = 0;
+    let cero = 0;
+
+    let n = prompt('Digite la cantidad de numeros de la serie de fibonacci a tomar: (maximo 12)')
+    let resultados = [];
+
+    if (n > 12) return;
+
+    alert('Los numeros aleatorios tomados seran mostrados por consola.')
+    for (let i = 0; i < n; i++) {
+        let numero = RandomInt(n+1);
+        console.log(numero);
+        resultados.push(fibonacci[numero]);
+    }
+
+    resultados.forEach(resultado => {
+        if (resultado === 0) cero++;
+        else if (resultado % 2 === 0) par++;
+        else impar++;
+    });
+
+    alert(`La cantidad de numeros pares: ${par}`);
+    alert(`La cantidad de numeros impares: ${impar}`);
+    alert(`La cantidad de ceros: ${cero}`);
+
+}
+
+Ejercicio13();
