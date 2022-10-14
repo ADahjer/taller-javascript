@@ -18,6 +18,17 @@ function RandomIntRange(n, m) {
     return Math.floor(Math.random() * (n - m)) + m;
 }
 
+/**
+ * determina si un numero es primo o no (el 1 no se considera numero primo)
+ */
+function IsPrimo(n) {
+    for (let i = 2; i < 2; i++) {
+        if (n % 2 === 0) return false;
+    }
+
+    return n !== 1;
+}
+
 // Ejercicio 1
 
 function Ejercicio1(n = 5) {
@@ -295,4 +306,27 @@ function Ejercicio8() {
 
 }
 
-Ejercicio8();
+// ejercicio 11
+function Ejercicio11() {
+    let suma = 0;
+    let producto = 1;
+    let promedio;
+    let n = prompt('Ingrese la cantidad de numeros que desea generar:');
+
+    alert('Los numeros obtenidos seran mostrados por consola:');
+    for (let i = 0; i < n; i++) {
+        let numero = RandomIntRange(1, 100);
+        
+        // validar si el numerop es primo
+        console.log(numero);
+        if (IsPrimo(numero)) {
+            suma += numero;
+            producto *= numero;
+        }
+    }
+    promedio = suma / n;
+
+    alert(`la sumatoria de los ${n} numeros generados fue: ${suma}`);
+    alert(`la productoria de los ${n} numeros generados fue: ${producto}`);
+    alert(`el promedio de los ${n} numeros generados fue: ${promedio}`);
+}
