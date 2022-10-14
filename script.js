@@ -7,15 +7,15 @@
 /**
  * generador de numeros enteros aleatorios desde 0 hasta n - 1
  */ 
-function RandomInt(n) {
-    return Math.floor(Math.random * n);
+function RandomInt(max) {
+    return Math.floor(Math.random * max);
 }
 
 /**
  * generador de numeros aleatorios con rango entre n y m
  */
-function RandomIntRange(n, m) {
-    return Math.floor(Math.random() * (n - m)) + m;
+function RandomIntRange(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 /**
@@ -27,6 +27,15 @@ function IsPrimo(n) {
     }
 
     return n !== 1;
+}
+
+/**
+ * serie de fibonacci
+ */
+function fib(n) {
+    if (n <= 1) return n;
+
+    return fib(n-1) + fib(n-2);
 }
 
 // Ejercicio 1
