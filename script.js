@@ -270,4 +270,29 @@ function Ejercicio7() {
         alert('El total es: ' + total);
     
 }
-Ejercicio7();
+
+
+// ejercicio 8
+function Ejercicio8() {
+    let precio = prompt('Ingrese el valor de las boletas:');
+    // de 5 a 14 años
+    let cat1 = 0.35;
+    // de 15 a 19 años
+    let cat2 = 0.25;
+    // de 20 a 45 años
+    let cat3 = 0.10;
+    // de 46 a 65 años
+    let cat4 = 0.25;
+    // de 66 en adelante
+    let cat5 = 0.35;
+
+    // el dinero que pierde el teatro es igual a multiplicar el precio de la entrada por el porcentaje de descuento
+    alert(`El teatro pierde ${precio * cat1} por cada cliente entre 5 a 14 años.`);
+    alert(`El teatro pierde ${precio * cat2} por cada cliente entre 15 a 19 años.`);
+    alert(`El teatro pierde ${precio * cat3} por cada cliente entre 20 a 45 años.`);
+    alert(`El teatro pierde ${precio * cat4} por cada cliente entre 46 a 65 años.`);
+    alert(`El teatro pierde ${precio * cat5} por cada cliente de 66 años en adelante.`);
+
+}
+
+Ejercicio8();
