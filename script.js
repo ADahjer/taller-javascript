@@ -400,4 +400,17 @@ function Ejercicio13() {
 
 }
 
-Ejercicio13();
+// ejercicio 14
+function Ejercicio14() {
+    let a = prompt('ingrese el primer numero:')
+    let b = prompt('ingrese el segundo numero:')
+
+    const MCD = function(a, b) {
+        if (b === 0) return a;
+
+        return MCD(b, a%b);
+    }
+
+    alert(`El MCD entre ${a} y ${b} es: ${MCD(a, b)}`);
+
+}
