@@ -414,3 +414,25 @@ function Ejercicio14() {
     alert(`El MCD entre ${a} y ${b} es: ${MCD(a, b)}`);
 
 }
+
+// ejercicio 15
+function Ejercicio15() {
+    let paisA = 25;
+    let paisB = 19.9;
+    let tasaA = 0.02;
+    let tasaB = 0.03;
+    let year = 1994;
+
+    let aumentoAnualA = paisA * tasaA;
+    let aumentoAnualB = paisB * tasaB;
+
+    while (paisB <= paisA) {
+        paisA += aumentoAnualA;
+        paisB += aumentoAnualB;
+
+        year++;
+    }
+
+    alert(`En el año ${year} el pais B supero la poblacion del pais A, teniendo ${paisB.toFixed(2)} y ${paisA.toFixed(2)} millones de habitantes respectivamente`);
+
+}
